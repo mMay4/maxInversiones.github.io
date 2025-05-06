@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonios</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="Navegador">
+            <div class="NavegadorLogo">
+                <img src="/logo.png" alt="Logo de Max Inveriones">
+            </div>
+            <ul class="NavegadorPestañas">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/testimonios.html">Testimonios</a></li>
+                <li><a href="/productos.html">Productos</a></li>
+                <li><a href="/contacto.html">Contactanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="Testimonios">
+            <section class="Clientes">
+                <div class="ClientesIMG">
+                    <img src="/R1.jpg" alt="Imagen 1">
+                    <img src="/R2.jpg" alt="Imagen 2">
+                    <img src="/R3.jpg" alt="Imagen 3">
+                    <img src="/R4.jpg" alt="Imagen 4">
+                </div>
+                <div class="ClientesText">
+                    <h1>Clientes</h1>
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia maxime nam minus molestiae cum nesciunt, beatae, similique voluptatem, veritatis laudantium alias expedita nisi fugiat exercitationem delectus. Odio quae facere pariatur?</h1>
+                </div>
+            </section>
+            <section class="Trabajadores">
+                <div class="trabajadoresIMG">
+                    <img src="/T1.jpg" alt="Imagen 1">
+                    <img src="/T2.jpg" alt="Imagen 2">
+                    <img src="/T3.jpg" alt="Imagen 3">
+                    <img src="/T4.jpg" alt="Imagen 4">
+                    <img src="/T5.jpg" alt="Imagen 5">
+                </div>
+                <div class="TrabajadoresText">
+                    <h1>Trabajadores</h1>
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia maxime nam minus molestiae cum nesciunt, beatae, similique voluptatem, veritatis laudantium alias expedita nisi fugiat exercitationem delectus. Odio quae facere pariatur?</h1>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="Datos">
+            <div class="DatosSucre">
+                <h3>Oficina Sucre:</h3>
+                <a href="https://maps.app.goo.gl/PsxoV6KV69TgHqgV6"><i class="fa-solid fa-location-dot"></i> Av. Martin Cardenas N°32-A</a> 
+                <a href="https://wa.me/75768207"><i class="fa-solid fa-phone"></i> Pablo Calderón</a> 
+                <a href="https://wa.me/75769957"><i class="fa-solid fa-phone"></i> Diana Calderón</a>
+            </div>
+            <div class="DatosPotosi">
+                <h3>Oficina Potosí:</h3>
+                <a href="https://maps.app.goo.gl/tDSa5Dq6ZmFPCbdg8"><i class="fa-solid fa-location-dot"></i> Dir. Haylan Players 300-A</a>
+                <a href="https://wa.me/60456938"><i class="fa-solid fa-phone"></i> Juan Cardenas</a>
+            </div>
+            <div class="RedesSociales">
+                <h3>Redes Sociales</h3>
+                <a href="https://www.youtube.com/@maxinversiones2507"><i class="fa-brands fa-youtube"></i> Youtube</a>
+                <a href=""><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href=""><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            </div>
+        </div>
+        <div class="Copy">
+            <p>&copy; 2025 Max Inversiones | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        const clienteImgs = document.querySelectorAll('.ClientesIMG img');
+        let clienteIndex = 0;
+        function showClienteImage(idx) {
+            clienteImgs.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === idx) img.classList.add('active');
+            });
+        }
+        function startClienteCarousel() {
+        showClienteImage(clienteIndex);
+        clienteIndex = (clienteIndex + 1) % clienteImgs.length;
+        }
+        const trabajadorImgs = document.querySelectorAll('.trabajadoresIMG img');
+        let trabajadorIndex = 0;
+        function showTrabajadorImage(idx) {
+            trabajadorImgs.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === idx) img.classList.add('active');
+            });
+        }
+        function startTrabajadorCarousel() {
+        showTrabajadorImage(trabajadorIndex);
+        trabajadorIndex = (trabajadorIndex + 1) % trabajadorImgs.length;
+        }
+        setInterval(startClienteCarousel, 3000);
+        setInterval(startTrabajadorCarousel, 3000);
+        window.onload = () => {
+        showClienteImage(0);
+        showTrabajadorImage(0);
+        };
+    </script>      
+</body>
+</html>
