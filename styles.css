@@ -1,0 +1,451 @@
+/*Configuracion General*/
+body{
+    margin:0;
+    font-family: poppins;
+    background-color: #fff;
+    color:#02732A;
+}
+h1, h2, h3 {
+    color: #f28A2E;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+a:hover {
+    color: #02732A;
+}
+/*=== HEADER ===*/
+header{
+    background-color: #f28A2E;
+    color:#fff;
+    padding: 15px 30px;
+}
+.Navegador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f28A2E;
+}
+
+.NavegadorLogo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: white; 
+    border: 2px solid #fff;
+}
+
+.NavegadorPestañas {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.NavegadorPestañas li {
+    display: inline-block;
+}
+
+.NavegadorPestañas a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.NavegadorPestañas a:hover {
+    background-color: #f2bb16; 
+    color: #fff;            
+}
+.NavegadorLogo{
+    width: 60px;
+    height: 60px;
+    background-color: white;       
+    border-radius: 50%;            
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;        
+    overflow: hidden;
+}
+.Navegador img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;          
+}
+/*===MAIN===*/
+main {
+    background-color: #fff;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    padding: 0;
+}
+
+section {
+    padding: 2rem;
+    display: block; /* Eliminado display: none; para que no se oculte */
+}
+
+section.seccionMenu {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+.Portada {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.PortadaImagen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.PortadaImagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.633); 
+    z-index: 2;
+}
+.PortadaText {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 10px;
+    text-align: left;
+} 
+.PortadaText h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+.PortadaText p {
+    font-size: 24px;
+    line-height: 1.8;
+} 
+.Contenido {
+    padding: 40px ;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.Historia {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.HistoriaIMG img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+.HistoriaText {
+    flex: 1;
+}
+.HistoriaText h2 {
+    margin-bottom: 10px;
+}
+.Objetivos {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+}
+.Mision, .Vision {
+    flex: 1;
+}
+.Mision p, .Vision p {
+    line-height: 1.6;
+}
+/*Testimonios*/
+section.Clientes,
+section.Trabajadores {
+    display: block; 
+    background-color: #fff;
+    border: 4px solid #f2bb16;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.ClientesText h1:first-child,
+.TrabajadoresText h1:first-child {
+    font-size: 2rem;
+    color: #02732A;
+    margin-bottom: 20px;
+}
+
+.ClientesIMG,
+.trabajadoresIMG {
+    position: relative;
+    height: 300px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.ClientesIMG img,
+.trabajadoresIMG img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border: 5px solid #f28A2E;
+    border-radius: 10px;
+}
+
+.ClientesIMG img.active,
+.trabajadoresIMG img.active {
+    opacity: 1;
+}
+
+.ClientesText h1:last-child,
+.TrabajadoresText h1:last-child {
+    font-size: 1rem;
+    color: #333;
+    max-width: 90%;
+    margin: 0 auto;
+}
+/*Productos*/
+.Seleccion {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #f2bb16;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+.Seleccion h1 {
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 25px;
+}
+.Seleccion h1:hover {
+    transform: scale(1.1);
+    color: #00c17c;
+}
+
+:root {
+    --primary: #f28a2e;
+    --accent: #00c17c;
+    --background: #fff7f0;
+    --text: #333;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+}
+.Seleccion {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #f2bb16;
+    padding: 1rem;
+    color: white;
+    border-bottom: 4px solid var(--accent);
+}
+.Seleccion h1 {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.Seleccion h1:hover {
+    transform: scale(1.1);
+    color: var(--accent);
+}
+
+.lugar {
+    background-color: var(--primary);
+    margin-bottom: 2rem;
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    color: white;
+}
+.texto {
+    flex: 1 1 300px;
+}
+.imagenes {
+    flex: 2 1 400px;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+}
+.imagenes img {
+    width: 180px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.imagenes img:hover {
+    transform: scale(1.05);
+    border: 2px solid var(--accent);
+}
+.Productos h2 {
+    margin-top: 0;
+    color: #fff;
+}
+p {
+    margin: 0.4rem 0;
+}
+
+/*Formulario*/
+
+.Formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+}
+
+.FormularioContenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    max-width: 1000px;
+    width: 100%;
+}
+.FormularioTexto {
+    flex: 1 1 40%;
+}
+
+.FormularioTexto h2 {
+    color: #00c17c;
+    font-size: 24px;
+}
+.FormularioTexto p {
+    font-size: 18px;
+    color: #333;
+}
+.FormularioContact {
+    flex: 1 1 55%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.campo {
+    flex: 1 1 48%;
+    display: flex;
+    flex-direction: column;
+}
+.campo label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.campo input {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #f0f9f4;
+}
+.campo-textarea {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+}
+.campo-textarea label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo-textarea textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #f0f9f4;
+    min-height: 100px;
+    resize: vertical;
+}
+.boton {
+    flex: 1 1 100%;
+}
+.boton button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00c17c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+transition: background-color 0.3s ease;
+}
+.boton button:hover {
+    background-color: #00a96a;
+}
+/*===FOOTER===*/
+footer {
+    background-color: #02732A;
+    padding: 20px;
+    margin: auto;
+}
+.Datos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 15px;     
+}
+.DatosSucre,
+.DatosPotosi,
+.RedesSociales {
+    flex: 1;
+    min-width: 200px;
+}
+.Datos a,
+.RedesSociales a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+.Copy {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #f2bb16;
+}
